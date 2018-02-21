@@ -1,0 +1,21 @@
+<center><h1>Login Page</h1></center>
+<br>
+<div id="login-box">
+<span style="color:red">{{error.message}}</span>
+<span class="msg" ng-show="message!=undefined">{{message}}</span>
+<form>
+
+<div class="form-group">
+Enter Email id :
+<input type="email" ng-model="user.email" class="form-control" placeholder="Enter email">
+</div>
+
+<div class="form-group">
+Enter Password :
+<input type="password" ng-model="user.password" class="form-control" placeholder="Enter password">
+</div>
+
+<input type="submit" class="btn btn-primary" ng-click="login(user)" value="Login">
+
+</form>
+</div>

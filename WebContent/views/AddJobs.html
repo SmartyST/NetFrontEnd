@@ -1,0 +1,66 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+
+<center><h1>Add Jobs Here</h1></center>
+<br>
+<br>
+<div id="reg-box">
+<span style="color:red">{{error.message}}</span>
+
+<form>
+
+<div class="form-group">
+<label>Enter Job id :</label>
+<input type="text" ng-model="job.job_id" class="form-control" placeholder="Enter email">
+</div>
+
+<div class="form-group">
+<label>Enter Job Title :</label>
+<input type="text" ng-model="job.job_title" class="form-control" placeholder="Enter Job Title">
+</div>
+
+<div class="form-group">
+<label>Enter Job Designation :</label>
+<input type="text" ng-model="job.job_designation" class="form-control" placeholder="Enter Job Designation">
+</div>
+
+<div class="form-group">
+<label>Enter Job Description : </label>
+<input type="text" ng-model="job.job_description" class="form-control" placeholder="Enter Job Description">
+</div>
+
+<div class="form-group">
+<label>Enter Job Location :</label>
+<input type="text" ng-model="job.job_location" class="form-control" placeholder="Enter Job Location">
+</div>
+
+<div class="form-group">
+<label>Enter Salary :</label>
+<input type="text" ng-model="job.job_salary" class="form-control" placeholder="Enter Salary">
+</div>
+
+<div class="form-group">
+<label>Enter Experience :</label>
+<input type="text" ng-model="job.job_experience" class="form-control" placeholder="Enter Experience">
+</div>
+
+
+<div class="form-group">
+      <label>Select Role (select one):</label>
+      <select ng-model="job.job_role">
+        <option value="FRESHER">Fresher</option>
+        <option value="JOB_SEEKER">Job Seeker</option>
+        <option value="EMPLOYER">Employer</option>
+        <option value="PROFESSIONAL">Professional</option>
+      </select>
+</div>
+
+<input type="submit" class="btn btn-default" ng-click="#" value="Register">
+
+</form>
+</div>
+</div>
+</div>
+</div>
