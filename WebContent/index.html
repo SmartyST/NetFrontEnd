@@ -32,7 +32,9 @@
     	<div class="collapse navbar-collapse" id="collapse-example">
     	
     		<ul class="nav navbar-nav">
+    			<li> <a href="#!/addjob">Job</a></li>
       			<li> <a href="#!/register" ng-show="loggedInUser.firstname==undefined">Register</a></li>
+      			<li> <a href="#!/edituserprofile" ng-show="loggedInUser.firstname!=undefined">User Profile</a></li>
       			<li> <a href="#!/login" ng-show="loggedInUser.firstname==undefined">Login</a></li>
       			<li> <a href="#" ng-show="loggedInUser.firstname!=undefined">Welcome: {{loggedInUser.firstname}}</a>
       			<li> <a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Logout</a></li>
