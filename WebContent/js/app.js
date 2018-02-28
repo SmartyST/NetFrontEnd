@@ -23,8 +23,13 @@ app.config(function($routeProvider)
 	})
 	
 	.when('/addjob',{
-		templateUrl:'views/addjob.html',
-		controller: 'JobController'
+		templateUrl:'views/jobform.html',
+		controller: 'JobCtrl'
+	})
+	
+	.when('/alljobs',{
+		templateUrl:'views/jobslist.html',
+		controller: 'JobCtrl'
 	})
 	
 	

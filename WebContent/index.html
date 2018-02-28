@@ -31,11 +31,21 @@
     	
     	<div class="collapse navbar-collapse" id="collapse-example">
     	
-    		<ul class="nav navbar-nav">
-    			<li> <a href="#!/addjob">Job</a></li>
+    		<ul class="nav navbar-nav">   
       			<li> <a href="#!/register" ng-show="loggedInUser.firstname==undefined">Register</a></li>
       			<li> <a href="#!/edituserprofile" ng-show="loggedInUser.firstname!=undefined">User Profile</a></li>
       			<li> <a href="#!/login" ng-show="loggedInUser.firstname==undefined">Login</a></li>
+      			
+      			<li class="dropdown">
+      			<a class="dropdown-toggle" data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined" 
+      			    href="#">Jobs <span class="caret"></span></a>
+        			<ul class="dropdown-menu">
+          				<li><a href="#!/addjob" ng-show="loggedInUser.role=='ADMIN'">Add New Jobs</a></li>
+          				<li><a href="#">View Jobs</a></li>
+          				
+        			</ul>
+        		</li>
+      			
       			<li> <a href="#" ng-show="loggedInUser.firstname!=undefined">Welcome: {{loggedInUser.firstname}}</a>
       			<li> <a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Logout</a></li>
     		</ul>
@@ -55,6 +65,8 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="controllers/usercontroller.js"></script>
 <script type="text/javascript" src="services/userservice.js"></script>
+<script type="text/javascript" src="controllers/jobcontroller.js"></script>
+<script type="text/javascript" src="services/jobservice.js"></script>
 
 </html>
 

@@ -1,16 +1,18 @@
 /**
  * 
  */
-app.controller('JobController',function($scope,$rootScope,$location,$http,$cookieStore,JobService){
+app.controller('JobCtrl',function($scope,$rootScope,$location,JobService){
 	
-	$scope.addJob=function(){
-		JobService.addJob($scope.user).then(
+	$scope.addJob=function(job){
+		JobService.addJob(job).then(
 		function(response){
-			console.log(response.status)
 			alert('Job Details added sucessfully')
-			$location.path('/addjob')	
+			$location.path('/home')	
 		},function(response){
-			$scope.error=response.data
+			$rootScope.error=response.data
+			if(response.status==401)
+				$location.path('/login')
+				
 		})
 	}
 })
