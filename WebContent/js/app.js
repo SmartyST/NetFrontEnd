@@ -32,6 +32,10 @@ app.config(function($routeProvider)
 		controller: 'JobCtrl'
 	})
 	
+	.when('/getjob/:id',{
+		templateUrl:'views/jobdetail.html',
+		controller: 'JobCtrl'
+	})
 	
 	
 	.otherwise({
@@ -43,6 +47,7 @@ app.run(function($location,$rootScope,$cookieStore,UserService){
 		$rootScope.loggedInUser=$cookieStore.get('currentuser')
 		
 		$rootScope.logout=function(){
+		console.log('entering logout')
 		UserService.logout().then(
 			function(response){
 				delete $rootScope.loggedInUser;
