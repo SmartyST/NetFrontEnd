@@ -45,6 +45,16 @@
           				
         			</ul>
         		</li>
+        		
+        		<li class="dropdown">
+      			<a class="dropdown-toggle" data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined" 
+      			    href="#">Blog <span class="caret"></span></a>
+        			<ul class="dropdown-menu">
+          				<li><a href="#!/addblog">Add Blog</a></li>
+<!--           			<li><a href="#!/alljobs">View Jobs</a></li> -->
+          				
+        			</ul>
+        		</li>
       			
       			<li> <a href="#" ng-show="loggedInUser.firstname!=undefined">Welcome: {{loggedInUser.firstname}}</a>
       			<li> <a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined">Logout</a></li>
@@ -67,6 +77,8 @@
 <script type="text/javascript" src="services/userservice.js"></script>
 <script type="text/javascript" src="controllers/jobcontroller.js"></script>
 <script type="text/javascript" src="services/jobservice.js"></script>
+<script type="text/javascript" src="controllers/blogcontroller.js"></script>
+<script type="text/javascript" src="services/blogservice.js"></script>
 
 </html>
 
