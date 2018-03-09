@@ -42,11 +42,37 @@ app.config(function($routeProvider)
 		controller: 'BlogCtrl'
 	})
 	
+	.when('/blogsnotapproved',{
+		templateUrl:'views/blogsnotapproved.html',
+		controller: 'BlogCtrl'
+	})
+	
+	.when('/blogsapproved',{
+		templateUrl:'views/blogsapproved.html',
+		controller: 'BlogCtrl'
+	})
+	
+	.when('/getblog/:id',{
+		templateUrl:'views/blogdetails.html',
+		controller: 'BlogDetailCtrl'
+	})
+	
+	.when('/getblognotapproved/:id',{
+		templateUrl:'views/blogapprovalform.html',
+		controller: 'BlogDetailCtrl'
+	})
+	
+	.when('/home',{
+		templateUrl:'views/home.html',
+		controller: 'NotificationCtrl'
+	})
+	
 	
 	.otherwise({
 		templateUrl:'views/home.html'
 	})
 })
+
 app.run(function($location,$rootScope,$cookieStore,UserService){
 	if($rootScope.loggedInUser==undefined)
 		$rootScope.loggedInUser=$cookieStore.get('currentuser')

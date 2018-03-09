@@ -1,0 +1,16 @@
+<span ng-show="blogsWaitingForApproval.length==0">No Blogs Waiting for approval</span>
+<div class="container">
+	<div class="row" style="width: 600px">
+		<div ng-repeat="blog in blogsWaitingForApproval">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<a href="#!/getblognotapproved/{{blog.id}}">{{blog.blog_title}}</a>
+				</div>
+				<div class="panel-body">
+					<b>Posted On :</b> {{blog.blog_postedOn | date:'medium'}}<br>
+					<b>Posted By :</b> {{blog.blog_postedBy.firstname}}&nbsp;{{blog.blog_postedBy.lastname}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

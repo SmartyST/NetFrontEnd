@@ -3,14 +3,16 @@
 <head>
 <meta charset="ISO-8859-1">
 
+<link rel="icon" href="resources/favicon.png" type="image/png" sizes="16x16">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="resources/css/login.css" rel="stylesheet">
+<link href="resources/css/notification.css" rel="stylesheet">
 <link href="resources/css/registerform.css" rel="stylesheet">
 
-<title>Project 2</title>
+<title>Social Net</title>
 </head>
 <body ng-app="app">
 <header>
@@ -51,9 +53,27 @@
       			    href="#">Blog <span class="caret"></span></a>
         			<ul class="dropdown-menu">
           				<li><a href="#!/addblog">Add Blog</a></li>
-<!--           			<li><a href="#!/alljobs">View Jobs</a></li> -->
+          				<li><a href="#!/blogsnotapproved">Blogs waiting for approved</a></li>
+          				<li><a href="#!/blogsapproved">Blogs</a></li>
           				
         			</ul>
+        		</li>
+        		
+        		<li class="dropdown">
+        		<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="loggedInUser.firstname">
+        		<span class="glyphicon glyphicon-globe">
+        			<span class="rv-number-notification" ng-if="notificationCount>0">{{notificationCount}}</span>
+        		</span>
+        		</a>
+        			<ul class="dropdown-menu">
+        			<span class="dropdown-content">
+        			<li ng-repeat="notification in notifications">
+        			<a href="">Blog titled <b>{{notification.blogTitle}}</b>approval status is updated</a>
+        			<hr>
+        			</li>
+        			</span>
+        			</ul>
+        		
         		</li>
       			
       			<li> <a href="#" ng-show="loggedInUser.firstname!=undefined">Welcome: {{loggedInUser.firstname}}</a>
@@ -79,6 +99,9 @@
 <script type="text/javascript" src="services/jobservice.js"></script>
 <script type="text/javascript" src="controllers/blogcontroller.js"></script>
 <script type="text/javascript" src="services/blogservice.js"></script>
+<script type="text/javascript" src="controllers/blogdetailscontroller.js"></script>
+<script type="text/javascript" src="services/notificationservice.js"></script>
+<script type="text/javascript" src="controllers/notificationcontroller.js"></script>
 
 </html>
 
