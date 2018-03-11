@@ -36,3 +36,11 @@
     padding: 25px;
     margin: 25px;
 }
+
+.liked{
+	color: blue;
+}
+
+.default{
+	color: black;
+}

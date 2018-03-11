@@ -62,6 +62,11 @@ app.config(function($routeProvider)
 		controller: 'BlogDetailCtrl'
 	})
 	
+	.when('/getnotification/:id',{
+		templateUrl:'views/notificationdetails.html',
+		controller: 'NotificationCtrl'
+	})
+	
 	.when('/home',{
 		templateUrl:'views/home.html',
 		controller: 'NotificationCtrl'
