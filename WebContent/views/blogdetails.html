@@ -1,16 +1,30 @@
 <div class="panel panel-info">
 	<div class="panel-heading">
-		{{blog.blog_title}}<br> <b>Posted On :</b> {{blog.blog_postedOn |
-		date:'medium'}}<br> <b>Posted By :</b>
+		{{blog.blog_title}}<br> <b>Posted On :</b> {{blog.blog_postedOn | date:'medium'}}<br> <b>Posted By :</b>
 		{{blog.blog_postedBy.firstname}}&nbsp;{{blog.blog_postedBy.lastname}}
 	</div>
 	<div class="panel-body">
 		<p ng-bind-html="content"></p>
+		<br>
+	<div>
+		<a><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'" ng-click="updateLikes(blog.id)"></span></a>
+		{{blog.likes}} likes
 	</div>
-	
+	<div>
+	{{exceptionMessage.message}}
+	<textarea rows="1" cols="30" ng-model="commentTxt"></textarea>
+	<button type="button" class="btn brn-primary" ng-click="addComment(blog,commentTxt)">Post Comment</button>
+	<br>
+	<a ng-click="onShowComments()">{{comments.length}} Comments </a> <br>
+	<ul style="list-style:initial ;" ng-show="showComments">
+	<li ng-repeat="comment in comments | orderBy:'-commentedOn'">
+	{{comment.commentTxt}} &nbsp; <b>Commented By</b> {{comment.commentedBy.firstname}} &nbsp; <b>Commented On</b> {{comment.commentedOn | date:'medium'}}
+	<hr>
+	</li>
+	</ul>
+	</div>
+	</div>
 </div>
 
-<div>
-		<a><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'" ng-click="updateLikes(blog.id)"></span></a>{{blog.likes}} likes
-	</div>
+
 
