@@ -72,6 +72,11 @@ app.config(function($routeProvider)
 		controller: 'NotificationCtrl'
 	})
 	
+	.when('/uploadprofilepic',{
+		templateUrl:'views/uploadprofilepic.html',
+		
+	})
+	
 	
 	.otherwise({
 		templateUrl:'views/home.html'

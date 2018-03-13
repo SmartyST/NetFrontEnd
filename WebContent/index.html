@@ -76,7 +76,13 @@
         		
         		</li>
       			
-      			<li> <a href="#" ng-show="loggedInUser.firstname!=undefined">Welcome: {{loggedInUser.firstname}}</a>
+      			<li> <a href="#" ng-show="loggedInUser.firstname!=undefined">Welcome: {{loggedInUser.firstname}}</a></li>
+      			
+      			<li><a href="#!/uploadprofilepic" ng-show="loggedInUser.firstname">
+        		<img alt="Upload ProfilePic" src="http://localhost:8081/project2middleware/getimage/{{loggedInUser.email}}" height="35px" width="50px" class="img-circle">
+        		</a>
+        		</li>
+        		
       			<li> <a href="" ng-click="logout()" ng-show="loggedInUser.firstname!=undefined"><span class="glyphicon glyphicon-log-out"> Logout</span></a></li>
     		</ul>
     
