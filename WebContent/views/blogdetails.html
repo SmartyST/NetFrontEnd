@@ -1,7 +1,8 @@
 <div class="panel panel-info">
 	<div class="panel-heading">
 		{{blog.blog_title}}<br> <b>Posted On :</b> {{blog.blog_postedOn | date:'medium'}}<br> <b>Posted By :</b>
-		{{blog.blog_postedBy.firstname}}&nbsp;{{blog.blog_postedBy.lastname}}
+		{{blog.blog_postedBy.firstname}}&nbsp;{{blog.blog_postedBy.lastname}}<br>
+		<img alt="image" src="http://localhost:8081/project2middleware/getimage/{{blog.blog_postedBy.email}}" height="45px" width="45px">
 	</div>
 	<div class="panel-body">
 		<p ng-bind-html="content"></p>

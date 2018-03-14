@@ -1,13 +1,18 @@
 <div class="container">
 	<div class="row" style="width: 600px">
-		<div ng-repeat="blog in blogsApproved">
+		
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<a href="#!/getblog/{{blog.id}}">{{blog.blog_title}}</a>
+				Blog Post
 				</div>
+					
 				<div class="panel-body">
+				<div ng-repeat="blog in blogsApproved">
+				<a href="#!/getblog/{{blog.id}}">{{blog.blog_title}}</a><br>
 					<b>Posted On :</b> {{blog.blog_postedOn | date:'medium'}}<br>
-					<b>Posted By :</b> {{blog.blog_postedBy.firstname}}&nbsp;{{blog.blog_postedBy.lastname}}
+					<b>Posted By :</b> {{blog.blog_postedBy.firstname}}&nbsp;{{blog.blog_postedBy.lastname}}<br>
+						<img alt="" src="http://localhost:8081/project2middleware/getimage/{{blog.blog_postedBy.email}}" height="35px" width="35px" >
+						<hr>
 				</div>
 			</div>
 		</div>
