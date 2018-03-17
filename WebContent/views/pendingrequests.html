@@ -1,0 +1,21 @@
+<div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<b>Friend Requests</b>
+		</div>
+		<div class="panel-body">
+		<span ng-if="pendingRequests.length==0">No Suggested Users</span>
+			<ul style="list-style: none;">
+				<li ng-repeat="request in pendingRequests">
+				<b>{{request.fromId.email}}</b><br>
+				<b>{{request.fromId.firstname}} &nbsp; {{request.fromId.lastname}}</b><br>
+				<b>{{request.fromId.phone}}</b><br>
+				<img alt="No Image" src="http://localhost:8081/project2middleware/getimage/{{request.fromId.email}}" width="40px" height="40px"><br><br>
+				<button type="button" class="btn btn-primary" ng-click="acceptRequest(request)">Accept</button>
+				<button type="button" class="btn btn-danger" ng-click="deleteRequest(request)">Delete</button>
+				<hr>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

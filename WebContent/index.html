@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="resources/favicon.png" type="image/png" sizes="16x16">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -60,6 +60,16 @@
         		</li>
         		
         		<li class="dropdown">
+      			<a class="dropdown-toggle" data-toggle="dropdown" ng-show="loggedInUser.firstname!=undefined" 
+      			    href="#">Friends <span class="caret"></span></a>
+        			<ul class="dropdown-menu">
+          				<li><a href="#!/suggestedusers">Suggested User</a></li>
+          				<li><a href="#!/pendingrequests">Pending Requests</a></li>
+          				
+        			</ul>
+        		</li>
+        		
+        		<li class="dropdown">
         		<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="loggedInUser.firstname">
         		<span class="glyphicon glyphicon-globe">
         			<span class="rw-number-notification" ng-if="notificationCount>0">{{notificationCount}}</span>
@@ -79,7 +89,7 @@
       			<li> <a href="#" ng-show="loggedInUser.firstname!=undefined">Welcome: {{loggedInUser.firstname}}</a></li>
       			
       			<li><a href="#!/uploadprofilepic" ng-show="loggedInUser.firstname">
-        		<img alt="Upload ProfilePic" src="http://localhost:8081/project2middleware/getimage/{{loggedInUser.email}}" height="35px" width="50px" class="img-circle">
+        		<img alt="Upload ProfilePic" src="http://localhost:8081/project2middleware/getimage/{{loggedInUser.email}}" height="45px" width="45px" class="img-circle">
         		</a>
         		</li>
         		
@@ -108,6 +118,8 @@
 <script type="text/javascript" src="controllers/blogdetailscontroller.js"></script>
 <script type="text/javascript" src="services/notificationservice.js"></script>
 <script type="text/javascript" src="controllers/notificationcontroller.js"></script>
+<script type="text/javascript" src="services/friendservice.js"></script>
+<script type="text/javascript" src="controllers/friendcontroller.js"></script>
 
 </html>
 

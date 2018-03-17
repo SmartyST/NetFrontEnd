@@ -1,0 +1,15 @@
+<span ng-if="suggestedUsers.length==0">No Suggested Users</span>
+<table class="table table-hover">
+<tr ng-repeat="user in suggestedUsers">
+<td>{{user.email}}<br>
+{{user.firstname}} &nbsp; {{user.lastname}}<br>
+<b>Phone No</b>{{user.phone}}
+</td>
+<td>
+<img alt="No Image" src="http://localhost:8081/project2middleware/getimage/{{user.email}}" height="70px" width="70px">
+</td>
+<td>
+<button type="button" class="btn btn-primary fa fa-user-plus" ng-click="addFriend(user)"> Add Friend </button>
+</td>
+</tr>
+</table>
